@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etName"
+            style="@style/editTextStyle"
+            android:inputType="textCapWords"
+            android:imeOptions="actionNext"
+            android:hint="@string/name"
+            android:autofillHints="@string/your_name" />
+        <EditText
+            android:id="@+id/etPhone"
+            style="@style/editTextStyle"
+            android:inputType="phone"
+            android:hint="@string/phone"
+            android:maxLength="10"
+            android:autofillHints="@string/your_contact" />
+        <EditText
+            android:id="@+id/etMail"
+            style="@style/editTextStyle"
+            android:inputType="textEmailAddress"
+            android:hint="@string/e_mail"
+            android:autofillHints="@string/your_email" />
+        <EditText
+            android:id="@+id/etAddress"
+            style="@style/editTextStyle"
+            android:inputType="text"
+            android:hint="@string/address"
+            android:autofillHints="@string/youre_home" />
+        <EditText
+            android:id="@+id/etDob"
+            style="@style/editTextStyle"
+            android:inputType="date"
+            android:focusable="false"
+            android:hint="@string/date_of_birth"
+            android:autofillHints="@string/your_bdate" />
+        <TextView
+            android:id="@+id/etCountry"
+            style="@style/editTextStyle"
+            android:text="@string/country"
+            />
+        <Spinner
+            android:id="@+id/countryDropDown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20dp"
+            android:layout_marginEnd="@dimen/margin_20dp"
+            android:paddingStart="@dimen/padding_15dp"
+            android:paddingEnd="@dimen/padding_15dp"
+            android:dropDownSelector="@color/black"
+            android:spinnerMode="dropdown"
+            android:scrollIndicators="end"
+            />
+
+        <TextView
+            style="@style/editTextStyle"
+            android:text="@string/gender_colon"
+            android:id="@+id/tvGender"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rgGender"
+            android:layout_marginStart="@dimen/margin_20dp"
+            android:layout_marginEnd="@dimen/margin_20dp"
+            android:paddingStart="@dimen/padding_15dp"
+            android:paddingEnd="@dimen/padding_15dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rbMale"
+                android:text="@string/male"
+                style="@style/radioBtnStyle" />
+            <RadioButton
+                style="@style/radioBtnStyle"
+                android:id="@+id/rbFemale"
+                android:text="@string/female"/>
+        </RadioGroup>
+
+        <TextView
+            style="@style/editTextStyle"
+            android:text="@string/hobby"
+            android:id="@+id/tvHobby"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/margin_20dp"
+            android:layout_marginEnd="@dimen/margin_20dp"
+            android:paddingStart="@dimen/padding_15dp"
+            android:paddingEnd="@dimen/padding_15dp">
+            <CheckBox
+                android:id="@+id/chPlaying"
+                android:text="@string/playing"
+                style="@style/checkBoxStyle" />
+            <CheckBox
+                style="@style/checkBoxStyle"
+                android:id="@+id/chReading"
+                android:text="@string/reading"/>
+            <CheckBox
+                style="@style/checkBoxStyle"
+                android:id="@+id/chWriting"
+                android:text="@string/writing"/>
+        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSignIn"
+            android:layout_margin="@dimen/margin_20dp"
+            android:text="@string/sign_in"
+            android:layout_gravity="center_horizontal"
+            android:onClick="btnClick"/>
+
+    </LinearLayout>
+
+</ScrollView>

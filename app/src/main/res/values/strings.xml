@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">TatvasooftAssignment6</string>
+
+
+    <string name="valid_data">SignUp Successfully</string>
+    <string name="err_name">Enter name</string>
+    <string name="err_address">Enter address</string>
+    <string name="err_dob">Select date of birth</string>
+    <string name="err1_email">Enter email</string>
+    <string name="err2_email">Enter valid email</string>
+    <string name="err2_contact">Enter valid contact no.</string>
+    <string name="err1_contact">Enter contact no.</string>
+    <string name="err_gender">Select gender</string>
+    <string name="err_country">Select country</string>
+    <string name="err_hobby">Select atleast 1 hobby</string>
+    <string name="gender">Gender</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="e_mail">E-mail</string>
+    <string name="address">Address</string>
+    <string name="country">Country</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="gender_colon">Gender :</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="hobby">Hobby :</string>
+    <string name="playing">Playing</string>
+    <string name="reading">Reading</string>
+    <string name="writing">Writing</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="spalshscreenimage">spalshScreenImage</string>
+    <string name="your_name">Your name</string>
+    <string name="your_contact">Your contact no.</string>
+    <string name="your_email">xyz@gmail.com</string>
+    <string name="youre_home">Your home</string>
+    <string name="your_bdate">dd/mm/yyyy</string>
+
+    <string name="email_pattern">"^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                                +"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                                +"[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                                +"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                                +"[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                                +"([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$";</string>
+    <string-array name="countryArray">
+        <item>India</item>
+        <item>Australia</item>
+        <item>America</item>
+        <item>Brazil</item>
+        <item>China</item>
+        <item>Columbia</item>
+    </string-array>
+</resources>
