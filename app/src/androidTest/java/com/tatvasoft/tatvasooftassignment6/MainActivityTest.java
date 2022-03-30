@@ -1,16 +1,5 @@
 package com.tatvasoft.tatvasooftassignment6;
 
-import androidx.test.core.app.ActivityScenario;
-import androidx.test.espresso.action.ViewActions;
-import androidx.test.espresso.assertion.ViewAssertions;
-import androidx.test.filters.LargeTest;
-import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
-
-import junit.framework.TestCase;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -29,15 +18,27 @@ import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
+import androidx.test.core.app.ActivityScenario;
+import androidx.test.espresso.NoMatchingRootException;
+import androidx.test.espresso.action.ViewActions;
+import androidx.test.espresso.assertion.ViewAssertions;
+import androidx.test.filters.LargeTest;
+import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
+import androidx.test.rule.ActivityTestRule;
+
+import junit.framework.TestCase;
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
 @LargeTest
 @RunWith(AndroidJUnit4ClassRunner.class)
 public class MainActivityTest extends TestCase {
 
-    @Test
-    public void testActivity() {
-        ActivityScenario scenario = ActivityScenario.launch(MainActivity.class);
-    }
 
+    @Rule
+    public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<>(MainActivity.class);
     @Test
     public void mainActivityTest() {
         ActivityScenario activityScenario = ActivityScenario.launch(MainActivity.class);
@@ -82,12 +83,19 @@ public class MainActivityTest extends TestCase {
         onView(withId(R.id.btnSignIn)).perform(ViewActions.scrollTo(),click())
                 .check(ViewAssertions.matches(isDisplayed()));
 
-        //toast message - display test
-        onView(withText(R.string.valid_data))
+            boolean exceptionCaptured = false;
+            try{
+                onView(withText(R.string.valid_data))
                 .inRoot(new ToastMatcher())
                 .check(matches(isDisplayed()));
-
-
+            }catch (NoMatchingRootException e)
+            {
+                exceptionCaptured = true;
+            }finally {
+                {
+                    assertTrue(exceptionCaptured);
+                }
+            }
     }
     @Test
     public void testViewVisibility()
